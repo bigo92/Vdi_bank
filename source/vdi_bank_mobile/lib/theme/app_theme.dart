@@ -27,6 +27,8 @@ class VdiAppTheme {
   static const Color deactivatedText = Color(0xFF767676);
   static const Color dismissibleBackground = Color(0xFF364A54);
   static const Color spacer = Color(0xFFF2F2F2);
+
+
   static const String fontName = 'MPLUSRounded1c';
 
   static const TextTheme textTheme = TextTheme(
@@ -93,4 +95,6 @@ class VdiAppTheme {
     // fontSize: 15,
     color: Colors.white,
   );
+
+  static const padding = 10.0;
 }

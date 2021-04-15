@@ -5,6 +5,7 @@ const Map<String, String> en = {
   'history': 'History',
   'notification': 'Notification',
   'setting': 'Setting',
+  'login': 'Login',
   'logout': 'Logout',
   'personalInformation': 'Personal information',
   'pleaseWait': 'please wait'

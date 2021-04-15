@@ -5,6 +5,7 @@ const Map<String, String> vi = {
   'history': 'Lịch sử',
   'notification': 'Thông báo',
   'setting': 'Cài đặt',
+  'login': 'Đăng nhập',
   'logout': 'Đăng xuất',
   'personalInformation': 'Thông tin cá nhân',
   'pleaseWait': 'Vui lòng đợi'
