@@ -8,5 +8,7 @@ const Map<String, String> vi = {
   'login': 'Đăng nhập',
   'logout': 'Đăng xuất',
   'personalInformation': 'Thông tin cá nhân',
-  'pleaseWait': 'Vui lòng đợi'
+  'pleaseWait': 'Vui lòng đợi',
+  'otpAuthentication': 'Xác thực OTP',
+  'destroy': 'Hủy'
 };

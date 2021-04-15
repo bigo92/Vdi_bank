@@ -8,5 +8,7 @@ const Map<String, String> en = {
   'login': 'Login',
   'logout': 'Logout',
   'personalInformation': 'Personal information',
-  'pleaseWait': 'please wait'
+  'pleaseWait': 'please wait',
+  'otpAuthentication': 'Otp authentication',
+  'destroy': 'cancel'
 };
