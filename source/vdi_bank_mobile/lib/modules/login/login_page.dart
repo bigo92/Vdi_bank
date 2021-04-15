@@ -35,7 +35,7 @@ class LoginPage extends GetView<LoginController> {
             ElevatedButton(
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
-
+                elevation:  MaterialStateProperty.all<double>(0.0),
               ),
               onPressed: () {},
               child: Text('dang nhap'),
