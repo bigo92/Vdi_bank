@@ -1,0 +1,1 @@
+const kSize = 20;
