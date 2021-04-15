@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:vdi_bank/widgets/custom_button.dart';
 
 import 'login_controller.dart';
 
@@ -32,13 +33,15 @@ class LoginPage extends GetView<LoginController> {
               ),
             ),
             Spacer(),
-            ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
-                elevation:  MaterialStateProperty.all<double>(0.0),
+            Obx(
+              () => CustomButton(
+                text: 'Đăng nhập',
+                onPress: () {
+                  controller.onLogin();
+                },
+                color: Colors.green,
+                isLoading: controller.isSubmit.value,
               ),
-              onPressed: () {},
-              child: Text('dang nhap'),
             ),
           ],
         ),
