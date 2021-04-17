@@ -12,4 +12,6 @@ const Map<String, String> en = {
   'otpAuthentication': 'Otp authentication',
   'destroy': 'cancel',
   'changeMethodRecieveOtp': 'Change method recieve OTP',
+  'userName': 'User name',
+  'passWord': 'Pass word',
 };

@@ -1,6 +1,39 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:vdi_bank/modules/home/tab_modules/tab_main/tab_main_page.dart';
+import 'package:vdi_bank/modules/home/tab_modules/tab_setting/tab_setting_page.dart';
+import 'package:vdi_bank/modules/home/tab_modules/tab_transfer/tab_transfer_page.dart';
 
 class HomeController extends GetxController {
+  final selectedIndex = 0.obs;
+  static const TextStyle optionStyle =
+  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
+  List<Widget> widgetOptions = <Widget>[
+    TabMainPage(),
+    TabTransferPage(),
+    TabSettingPage(),
+  ];
+
+  List<BottomNavigationBarItem> listTitleBottom = <BottomNavigationBarItem>[
+    BottomNavigationBarItem(
+      icon: Icon(Icons.home),
+      label: 'Main',
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.transfer_within_a_station),
+      label: 'Transfer',
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.settings),
+      label: 'Setting',
+    ),
+  ];
+
+  onItemTapped(int index) {
+    selectedIndex.value = index;
+  }
+
   @override
   void onInit() async {
     super.onInit();

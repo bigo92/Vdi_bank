@@ -11,20 +11,36 @@ class LoginPage extends GetView<LoginController> {
     return Scaffold(
       appBar: AppBar(
         title: Text('login'.tr),
+        actions: [
+          Obx(
+            () => TextButton(
+              onPressed: () {
+                controller.onToggleLanguage();
+              },
+              child: Text(controller.appLanguage.value == 'vi'
+                  ? 'English'
+                  : 'Tiếng Việt'),
+            ),
+          ),
+        ],
       ),
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: VdiAppTheme.padding,),
+          padding: EdgeInsets.symmetric(
+            horizontal: VdiAppTheme.padding,
+          ),
           child: Column(
             children: [
               TextField(
-                decoration: InputDecoration(labelText: 'Ten dang nhap'),
+                decoration: InputDecoration(
+                  labelText: 'userName'.tr,
+                ),
               ),
               Obx(
                 () => TextField(
                   obscureText: controller.isVisibility.value,
                   decoration: InputDecoration(
-                      labelText: 'mat khau',
+                      labelText: 'passWord'.tr,
                       suffixIcon: IconButton(
                         icon: controller.isVisibility.value
                             ? Icon(Icons.visibility)

@@ -355,7 +355,7 @@ class DialogService {
                 children: [
                   SpinKitFadingCircle(
                     color: Colors.grey,
-                    size: 50,
+                    size: 30,
                   ),
                   SizedBox(
                     height: 30,

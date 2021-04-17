@@ -12,4 +12,6 @@ const Map<String, String> vi = {
   'otpAuthentication': 'Xác thực OTP',
   'destroy': 'Hủy',
   'changeMethodRecieveOtp': 'Đổi phương thức nhận OTP',
+  'userName': 'Tài khoản',
+  'passWord': 'Mật khẩu',
 };

@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:vdi_bank/core/services/custom_dialog_service.dart';
+import 'package:vdi_bank/core/services/dialog_service.dart';
 import 'package:vdi_bank/routes/pages.dart';
 
 class OtpAuthenticationController extends GetxController {
@@ -11,9 +12,9 @@ class OtpAuthenticationController extends GetxController {
   }
 
   onAuthenticationOtp(String otpCode) async {
-    CustomDialogService().onShowLoading(true);
+    DialogService.onShowLoading(true);
     await 2.delay();
-    CustomDialogService().onShowLoading(false);
+    DialogService.onShowLoading(false);
     Get.offAllNamed(Routes.HOME);
   }
 
