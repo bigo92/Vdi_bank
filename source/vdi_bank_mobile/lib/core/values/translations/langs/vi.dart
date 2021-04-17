@@ -1,6 +1,6 @@
 const Map<String, String> vi = {
   'hello': 'Xin chào',
-  'multipleLanguage' : 'Đa ngôn ngữ',
+  'multipleLanguage': 'Đa ngôn ngữ',
   'language': 'Ngôn ngữ',
   'history': 'Lịch sử',
   'notification': 'Thông báo',
@@ -10,5 +10,6 @@ const Map<String, String> vi = {
   'personalInformation': 'Thông tin cá nhân',
   'pleaseWait': 'Vui lòng đợi',
   'otpAuthentication': 'Xác thực OTP',
-  'destroy': 'Hủy'
+  'destroy': 'Hủy',
+  'changeMethodRecieveOtp': 'Đổi phương thức nhận OTP',
 };

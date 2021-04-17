@@ -16,9 +16,13 @@ class LoginController extends GetxController {
   onLogin() async {
     print('on login');
     isSubmit.value = true;
-    await 2.delay();
+    await 1.delay();
     isSubmit.value = false;
-    Get.toNamed(Routes.OTP_AUTHENTICATION);
+    Get.toNamed(Routes.METHOD_OTP);
+  }
+
+  onSkip() async {
+    Get.offAllNamed(Routes.HOME);
   }
 
   @override

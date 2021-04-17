@@ -36,6 +36,7 @@ dependencies:
   flutter_spinkit: ^4.1.2 #loadding
   shimmer: ^1.1.2 # placehover list loading
   line_icons: ^0.2.0 #icon ??p
+  pin_code_fields: ^7.0.0 #otp code ui
 
 dev_dependencies:
   flutter_test:
