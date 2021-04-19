@@ -1,6 +1,6 @@
 const Map<String, String> en = {
   'hello': 'Hello',
-  'multipleLanguage' : 'Multiple language',
+  'multipleLanguage': 'Multiple language',
   'language': 'Language',
   'history': 'History',
   'notification': 'Notification',
@@ -10,5 +10,8 @@ const Map<String, String> en = {
   'personalInformation': 'Personal information',
   'pleaseWait': 'please wait',
   'otpAuthentication': 'Otp authentication',
-  'destroy': 'cancel'
+  'destroy': 'cancel',
+  'changeMethodRecieveOtp': 'Change method recieve OTP',
+  'userName': 'User name',
+  'passWord': 'Pass word',
 };
