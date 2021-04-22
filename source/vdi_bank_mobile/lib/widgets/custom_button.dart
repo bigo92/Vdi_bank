@@ -59,35 +59,36 @@ class CustomButton extends StatelessWidget {
                 )),
               ),
               onPressed: isLoading ? null : onPress,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  isLoading
-                      ? SizedBox(
-                          child: SpinKitFadingCircle(
-                            color: textColor,
-                            size: 15,
-                          ),
-                        )
-                      : Row(
-                          children: [
-                            prefix == null ? Container() : prefix,
-                            SizedBox(
-                              width: 5,
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    isLoading
+                        ? SizedBox(
+                            child: SpinKitFadingCircle(
+                              color: textColor,
+                              size: 15,
                             ),
-                            Text(
-                              text,
-                              style: TextStyle(
-                                    color: textColor
-                                  ),
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            subfix == null ? Container() : subfix,
-                          ],
-                        )
-                ],
+                          )
+                        : Row(
+                            children: [
+                              prefix == null ? Container() : prefix,
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                text,
+                                style: TextStyle(color: textColor),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              subfix == null ? Container() : subfix,
+                            ],
+                          )
+                  ],
+                ),
               ),
             ),
           );

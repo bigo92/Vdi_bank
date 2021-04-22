@@ -1,9 +1,13 @@
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:vdi_bank/core/services/custom_dialog_service.dart';
 import 'package:vdi_bank/core/services/dialog_service.dart';
 import 'package:vdi_bank/core/services/local_storage_service.dart';
 import 'package:vdi_bank/core/services/localization_service.dart';
 import 'package:vdi_bank/routes/pages.dart';
+import 'package:qrscan/qrscan.dart' as scanner;
+
 
 class LoginController extends GetxController {
   var isVisibility = true.obs;
@@ -52,6 +56,23 @@ class LoginController extends GetxController {
 
   onSkip() async {
     Get.offAllNamed(Routes.HOME);
+  }
+
+  onQrCodeScanner() async {
+    try {
+      await Permission.camera.request();
+      String photoScanResult = await scanner.scan();
+      if (photoScanResult.isNotEmpty) {
+        // Get.toNamed(Routes.POSTAGE,
+        //     arguments: photoScanResult);
+      }
+    } catch (e){
+
+    }
+  }
+
+  onDev() async {
+    DialogService.alert(title: 'Thông báo',message: 'Chức năng đang được phát triển');
   }
 
   @override

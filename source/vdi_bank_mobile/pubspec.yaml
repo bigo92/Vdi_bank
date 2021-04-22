@@ -38,6 +38,7 @@ dependencies:
   shimmer: ^1.1.2 # placehover list loading
   line_icons: ^0.2.0 #icon ??p
   pin_code_fields: ^7.0.0 #otp code ui
+  qrscan: ^0.3.1 #qr code scannser
 
 dev_dependencies:
   flutter_test:
@@ -89,6 +90,8 @@ flutter:
     - assets/images/group_postage.png
     - assets/images/icon_map.png
     - assets/images/image_loading.gif
+    - assets/images/vpbank_smartotp_icon.png
+    - assets/images/icon_bee.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
