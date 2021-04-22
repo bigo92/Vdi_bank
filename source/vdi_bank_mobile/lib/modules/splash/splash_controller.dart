@@ -1,4 +1,5 @@
 import 'package:vdi_bank/core/services/auth_service.dart';
+import 'package:vdi_bank/core/services/local_storage_service.dart';
 import 'package:vdi_bank/core/services/localization_service.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -25,15 +26,15 @@ class SplashController extends GetxController {
   Future<void> khoiTao() async {
     await getLanguage();
     Future.delayed(Duration(milliseconds: 10000), () async {
-      var authService = Get.find<AuthService>();
-      var checkLogin = await authService.checkLogin();
+      final authService = Get.find<AuthService>();
+      final checkLogin = await authService.checkLogin();
       checkLogin? Get.offAllNamed(Routes.HOME): Get.offAllNamed(Routes.LOGIN);
     });
   }
 
   Future<void> getLanguage() async {
-    final getStore = GetStorage();
-    String lang = await getStore.read('lang') ?? Get.deviceLocale.languageCode;
+    final localStorage = Get.find<LocalStorageService>().getStorage();
+    String lang = await localStorage.read('lang') ?? Get.deviceLocale.languageCode;
     LocalizationService.changeLocale(lang);
   }
 }

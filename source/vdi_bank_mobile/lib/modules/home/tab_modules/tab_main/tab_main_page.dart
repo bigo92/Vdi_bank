@@ -4,7 +4,7 @@ import 'package:vdi_bank/modules/home/tab_modules/tab_main/tab_main_controller.d
 import 'package:vdi_bank/theme/colors_theme.dart';
 
 class TabMainPage extends StatelessWidget {
-  final TabMainController tabMainController = Get.put(TabMainController());
+  final TabMainController tabMainController = Get.find<TabMainController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

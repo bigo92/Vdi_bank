@@ -1,3 +1,4 @@
+import 'package:vdi_bank/core/services/local_storage_service.dart';
 import 'package:vdi_bank/routes/pages.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class CustomDialogService extends GetxService {
   }
 
   void logout() {
-    final getStore = GetStorage();
+    final getStore = Get.find<LocalStorageService>().getStorage();
     this.token = '';
     getStore.remove('token');
   }

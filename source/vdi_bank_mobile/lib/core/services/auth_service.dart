@@ -1,12 +1,12 @@
-import 'package:vdi_bank/routes/pages.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:vdi_bank/core/services/local_storage_service.dart';
 
 class AuthService extends GetxService {
   String token = '';
 
   Future<bool> checkLogin() async {
-    final getStore = GetStorage();
+    final getStore = Get.find<LocalStorageService>().getStorage();
     token = await getStore.read('token') ?? '';
     if(token.isEmpty){
       return false;
@@ -16,13 +16,13 @@ class AuthService extends GetxService {
   }
 
   void login(String token) {
-    final getStore = GetStorage();
+    final getStore = Get.find<LocalStorageService>().getStorage();
     this.token = token;
     getStore.write('token', token);
   }
 
   void logout() {
-    final getStore = GetStorage();
+    final getStore = Get.find<LocalStorageService>().getStorage();
     this.token = '';
     getStore.remove('token');
   }

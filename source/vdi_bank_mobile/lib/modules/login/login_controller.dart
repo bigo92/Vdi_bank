@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:vdi_bank/core/services/dialog_service.dart';
+import 'package:vdi_bank/core/services/local_storage_service.dart';
 import 'package:vdi_bank/core/services/localization_service.dart';
 import 'package:vdi_bank/routes/pages.dart';
 
@@ -20,7 +21,7 @@ class LoginController extends GetxController {
   }
 
   Future<void> khoiTao() async {
-    final getStore = GetStorage();
+    final getStore = Get.find<LocalStorageService>().getStorage();
     // final CustomDialogService customDialogService = Get.find();
     // customDialogService.onShowLoading(true);
     DialogService.onShowLoading(true);
@@ -44,7 +45,7 @@ class LoginController extends GetxController {
 
   onToggleLanguage() {
     appLanguage.value = appLanguage.value == 'vi' ? 'en': 'vi';
-    final getStore = GetStorage();
+    final getStore = Get.find<LocalStorageService>().getStorage();
     LocalizationService.changeLocale(appLanguage.value);
     getStore.write('lang', appLanguage.value);
   }

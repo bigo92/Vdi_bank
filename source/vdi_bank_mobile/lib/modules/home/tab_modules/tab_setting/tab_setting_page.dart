@@ -4,7 +4,7 @@ import 'package:vdi_bank/modules/home/tab_modules/tab_setting/tab_setting_contro
 import 'package:vdi_bank/modules/home/tab_modules/tab_transfer/tab_transfer_controller.dart';
 
 class TabSettingPage extends StatelessWidget {
-  final TabSettingController tabTransferController = Get.put(TabSettingController());
+  final TabSettingController tabTransferController = Get.find<TabSettingController>();
   @override
   Widget build(BuildContext context) {
     return Container(child: Text('Tab Setting Page'),);
