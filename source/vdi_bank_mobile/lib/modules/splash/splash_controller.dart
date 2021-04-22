@@ -25,7 +25,7 @@ class SplashController extends GetxController {
 
   Future<void> khoiTao() async {
     await getLanguage();
-    Future.delayed(Duration(milliseconds: 10000), () async {
+    Future.delayed(Duration(milliseconds: 5000), () async {
       final authService = Get.find<AuthService>();
       final checkLogin = await authService.checkLogin();
       checkLogin? Get.offAllNamed(Routes.HOME): Get.offAllNamed(Routes.LOGIN);
