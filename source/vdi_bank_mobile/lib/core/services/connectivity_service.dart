@@ -6,6 +6,10 @@ import 'package:get/get.dart';
 class ConnectivityService extends GetxService {
   bool isShowingDialog = false;
 
+  Future<ConnectivityService> init() async {
+    return this;
+  }
+
   @override
   void onInit() async {
     super.onInit();

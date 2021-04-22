@@ -29,6 +29,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   get: ^4.1.1 # quan ly state he thong
+  get_it: ^4.0.4
   get_storage: ^2.0.2 #store
   permission_handler: ^6.1.1 # xin quyen
   connectivity: ^3.0.3 #check connect

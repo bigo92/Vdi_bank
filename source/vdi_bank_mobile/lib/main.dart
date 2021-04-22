@@ -8,12 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:get_it/get_it.dart';
 
 import 'core/services/connectivity_service.dart';
+import 'core/services/custom_dialog_service.dart';
 
 void main() async {
   await GetStorage.init();
-  // await initServices();
   runApp(MyApp());
 }
 

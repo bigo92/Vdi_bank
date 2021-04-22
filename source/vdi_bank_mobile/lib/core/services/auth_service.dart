@@ -5,10 +5,14 @@ import 'package:get_storage/get_storage.dart';
 class AuthService extends GetxService {
   String token = '';
 
-  Future<AuthService> init() async {
+  Future<bool> checkLogin() async {
     final getStore = GetStorage();
     token = await getStore.read('token') ?? '';
-    return this;
+    if(token.isEmpty){
+      return false;
+    } else {
+      return true;
+    }
   }
 
   void login(String token) {
@@ -27,11 +31,5 @@ class AuthService extends GetxService {
   @override
   void onInit() {
     super.onInit();
-
-    if(token.isEmpty){
-      Get.offAllNamed(Routes.LOGIN);
-    } else {
-      Get.offAllNamed(Routes.HOME);
-    }
   }
 }

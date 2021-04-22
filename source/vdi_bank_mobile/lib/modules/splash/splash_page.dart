@@ -6,7 +6,7 @@ import 'package:vdi_bank/modules/splash/splash_controller.dart';
 import 'package:vdi_bank/theme/colors_theme.dart';
 
 class SplashPage extends GetView<SplashController> {
-  final SplashController c = Get.put(SplashController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,0 +1,8 @@
+
+class AuthService extends GetxService {
+
+  @override
+  void onInit() async {
+    super.onInit();
+  }
+}

@@ -4,27 +4,36 @@ import 'package:vdi_bank/core/services/custom_dialog_service.dart';
 import 'package:vdi_bank/core/services/localization_service.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:vdi_bank/routes/pages.dart';
 
 class SplashController extends GetxController {
+
+  AuthService _authService;
+
   @override
   void onInit() async {
     super.onInit();
+    _authService = Get.find<AuthService>();
+
     khoiTao();
   }
 
-  Future<void> initServices() async {
-    print('starting services ...');
+  //Future<void> initServices() async {
+   // print('starting services ...');
     /// Here is where you put get_storage, hive, shared_pref initialization.
     /// or moor connection, or whatever that's async.
-    await Get.putAsync(() => AuthService().init());
-    await Get.putAsync(() => CustomDialogService().init());
-    Get.put(ConnectivityService());
-    print('All services started...');
-  }
+    // await Get.putAsync(() => AuthService().init());
+    // await Get.putAsync(() => CustomDialogService().init());
+    // Get.put(ConnectivityService());
+    //print('All services started...');
+  //}
 
-  void khoiTao() async {
-    await initServices();
+  Future<void> khoiTao() async {
     await getLanguage();
+    Future.delayed(Duration(milliseconds: 10000), () async {
+      var checkLogin = await _authService.checkLogin();
+      checkLogin? Get.offAllNamed(Routes.HOME): Get.offAllNamed(Routes.LOGIN);
+    });
   }
 
   Future<void> getLanguage() async {
