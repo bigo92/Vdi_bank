@@ -1,6 +1,4 @@
 import 'package:vdi_bank/core/services/auth_service.dart';
-import 'package:vdi_bank/core/services/connectivity_service.dart';
-import 'package:vdi_bank/core/services/custom_dialog_service.dart';
 import 'package:vdi_bank/core/services/localization_service.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -8,13 +6,9 @@ import 'package:vdi_bank/routes/pages.dart';
 
 class SplashController extends GetxController {
 
-  AuthService _authService;
-
   @override
   void onInit() async {
     super.onInit();
-    _authService = Get.find<AuthService>();
-
     khoiTao();
   }
 
@@ -31,7 +25,8 @@ class SplashController extends GetxController {
   Future<void> khoiTao() async {
     await getLanguage();
     Future.delayed(Duration(milliseconds: 10000), () async {
-      var checkLogin = await _authService.checkLogin();
+      var authService = Get.find<AuthService>();
+      var checkLogin = await authService.checkLogin();
       checkLogin? Get.offAllNamed(Routes.HOME): Get.offAllNamed(Routes.LOGIN);
     });
   }

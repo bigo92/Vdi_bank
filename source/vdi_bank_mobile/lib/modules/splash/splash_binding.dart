@@ -3,9 +3,7 @@ import 'package:vdi_bank/core/services/connectivity_service.dart';
 import 'package:vdi_bank/core/services/custom_dialog_service.dart';
 import 'package:vdi_bank/modules/splash/splash_controller.dart';
 import 'package:get/get.dart';
-import 'package:get_it/get_it.dart';
 
-final getIt = GetIt.instance;
 
 class SplashBinding implements Bindings {
   @override
