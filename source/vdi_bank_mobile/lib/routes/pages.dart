@@ -11,6 +11,8 @@ import 'package:vdi_bank/modules/otp_authentication/otp_authentication_page.dart
 import 'package:vdi_bank/modules/splash/splash_binding.dart';
 import 'package:vdi_bank/modules/splash/splash_page.dart';
 import 'package:get/get.dart';
+import 'package:vdi_bank/modules/to_account_number/to_account_number_binding.dart';
+import 'package:vdi_bank/modules/to_account_number/to_account_number_page.dart';
 
 part './routes.dart';
 
@@ -45,6 +47,11 @@ abstract class AppPages {
       name: Routes.METHOD_OTP,
       page: () => MethodOtpPage(),
       binding: MethodOtpBinding(),
+    ),
+    GetPage(
+      name: Routes.TO_ACCOUNT_NUMBER,
+      page: () => ToAccountNumberPage(),
+      binding: ToAccountNumberBinding(),
     ),
   ];
 }

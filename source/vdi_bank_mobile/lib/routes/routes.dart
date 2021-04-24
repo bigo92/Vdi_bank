@@ -7,4 +7,5 @@ abstract class Routes {
   static const SETTING = '/setting';
   static const OTP_AUTHENTICATION = '/otp_authentication';
   static const METHOD_OTP = '/method_otp';
+  static const TO_ACCOUNT_NUMBER = '/to_account_number';
 }

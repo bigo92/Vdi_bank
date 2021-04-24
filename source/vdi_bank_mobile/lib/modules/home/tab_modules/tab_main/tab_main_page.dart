@@ -67,7 +67,11 @@ class TabMainPage extends StatelessWidget {
                   children: [
                     _buildListItemTransfer(
                         icon: Icons.food_bank_outlined,
-                        text: 'To account number'),
+                        text: 'To account number',
+                      onPress: () {
+                          tabMainController.goToAccountNumber();
+                      }
+                    ),
                     _buildListItemTransfer(
                         icon: Icons.food_bank_outlined,
                         text: 'To account number'),
@@ -127,37 +131,40 @@ class TabMainPage extends StatelessWidget {
     );
   }
 
-  Container _buildListItemTransfer({IconData icon, String text}) {
-    return Container(
-      margin: EdgeInsets.all(15),
-      width: 70,
-      child: Column(
-        children: [
-          Container(
-            child: Icon(
-              icon,
-              color: Colors.white,
+  Widget _buildListItemTransfer({IconData icon, String text, Function onPress}) {
+    return GestureDetector(
+      onTap: onPress,
+      child: Container(
+        margin: EdgeInsets.all(15),
+        width: 70,
+        child: Column(
+          children: [
+            Container(
+              child: Icon(
+                icon,
+                color: Colors.white,
+              ),
+              decoration: BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadius.circular(30),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.green.withOpacity(0.3),
+                      spreadRadius: 2,
+                      blurRadius: 7,
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                  ]
+              ),
+              height: 60,
+              width: 60,
             ),
-            decoration: BoxDecoration(
-                color: Colors.green,
-                borderRadius: BorderRadius.circular(30),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.green.withOpacity(0.3),
-                    spreadRadius: 2,
-                    blurRadius: 7,
-                    offset: Offset(0, 3), // changes position of shadow
-                  ),
-                ]
+            Text(
+              text,
+              textAlign: TextAlign.center,
             ),
-            height: 60,
-            width: 60,
-          ),
-          Text(
-            text,
-            textAlign: TextAlign.center,
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
