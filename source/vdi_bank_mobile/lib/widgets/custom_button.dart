@@ -14,6 +14,7 @@ class CustomButton extends StatelessWidget {
   final Widget prefix;
   final Widget subfix;
   final Color colorIcon;
+  final EdgeInsets margin;
 
   const CustomButton(
       {Key key,
@@ -27,7 +28,8 @@ class CustomButton extends StatelessWidget {
       this.isLoading = false,
       this.prefix,
       this.subfix,
-      this.colorIcon = Colors.white})
+      this.colorIcon = Colors.white,
+      this.margin = EdgeInsets.zero})
       : super(key: key);
 
   @override
@@ -36,7 +38,7 @@ class CustomButton extends StatelessWidget {
     return this.hidden
         ? Container()
         : Container(
-            margin: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+            margin: margin,
             // width: size.width * 0.8,
             child: ElevatedButton(
               style: ButtonStyle(
