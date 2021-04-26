@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:keyboard_visibility/keyboard_visibility.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:vdi_bank/core/services/custom_dialog_service.dart';
 import 'package:vdi_bank/core/services/dialog_service.dart';
@@ -13,6 +14,7 @@ class LoginController extends GetxController {
   var isVisibility = true.obs;
   var isSubmit = false.obs;
   final appLanguage = 'vi'.obs;
+  final fixShowBroad = false.obs;
   @override
   void onInit() async {
     super.onInit();
@@ -22,6 +24,11 @@ class LoginController extends GetxController {
   void onReady() async {
     super.onReady();
     await khoiTao();
+    KeyboardVisibilityNotification().addNewListener(
+      onChange: (bool visible) {
+        this.fixShowBroad.value = visible;
+      },
+    );
   }
 
   Future<void> khoiTao() async {
