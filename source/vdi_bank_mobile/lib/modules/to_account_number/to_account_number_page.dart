@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:vdi_bank/theme/app_theme.dart';
 import 'package:vdi_bank/theme/colors_theme.dart';
 import 'package:vdi_bank/widgets/custom_button.dart';
 
@@ -20,7 +21,9 @@ class ToAccountNumberPage extends GetView<ToAccountNumberController> {
         child: LayoutBuilder(
           builder: (context, constraints) => SingleChildScrollView(
             child: SizedBox(
-              height: MediaQuery.of(context).size.height - (_appBar.preferredSize.height + MediaQuery.of(context).padding.top),
+              height: MediaQuery.of(context).size.height -
+                  (_appBar.preferredSize.height +
+                      MediaQueryData.fromWindow(Get.window).padding.top),
               child: Column(
                 children: [
                   Container(
@@ -36,13 +39,35 @@ class ToAccountNumberPage extends GetView<ToAccountNumberController> {
                           padding: EdgeInsets.symmetric(horizontal: 10),
                         ),
                         Expanded(
-                          child: ListView(
-                            shrinkWrap: true,
-                            scrollDirection: Axis.horizontal,
+                          child: Stack(
                             children: [
-                              _listFromItem(),
-                              _listFromItem(),
-                              _listFromItem(),
+                              PageView(
+                                scrollDirection: Axis.horizontal,
+                                onPageChanged: (index) {
+                                  print(index);
+                                },
+                                children: [
+                                  _listFromItem(
+                                    value: '240 000 000',
+                                    number: '43213634733',
+                                  ),
+                                  _listFromItem(
+                                    value: '123 000 000',
+                                    number: '43213634733',
+                                  ),
+                                  _listFromItem(
+                                    value: '500 000',
+                                    number: '43213634733',
+                                  ),
+                                ],
+                              ),
+                              // Positioned(
+                              //   child: Icon(
+                              //     Icons.arrow_forward_ios_rounded,
+                              //   ),
+                              //   right: 5,
+                              //   top: 30,
+                              // ),
                             ],
                           ),
                         ),
@@ -51,13 +76,25 @@ class ToAccountNumberPage extends GetView<ToAccountNumberController> {
                           padding: EdgeInsets.symmetric(horizontal: 10),
                         ),
                         Expanded(
-                          child: ListView(
-                            shrinkWrap: true,
+                          child: PageView(
+                            // shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
                             children: [
-                              _listFromItem(),
-                              _listFromItem(),
-                              _listFromItem(),
+                              _listFromItem(
+                                name: 'Normal VND',
+                                value: '500 000',
+                                number: '43213634733',
+                              ),
+                              _listFromItem(
+                                name: 'Normal VND',
+                                value: '400 000',
+                                number: '43213634733',
+                              ),
+                              _listFromItem(
+                                name: 'Normal VND',
+                                value: '233 000',
+                                number: '43213634733',
+                              ),
                             ],
                           ),
                         ),
@@ -71,33 +108,46 @@ class ToAccountNumberPage extends GetView<ToAccountNumberController> {
                         children: [
                           TextField(
                             decoration: InputDecoration(
+                              contentPadding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                              isDense: true,
                               labelText: 'Transfer amount',
                               suffix: Text(
                                 'đ',
-                                style:
-                                TextStyle(decoration: TextDecoration.underline),
+                                style: TextStyle(
+                                    decoration: TextDecoration.underline),
                               ),
+                              labelStyle: TextStyle(fontSize: 18),
                             ),
                             keyboardType: TextInputType.number,
+                            style: VdiAppTheme.textTheme.headline5,
+                            controller: controller.controller,
                           ),
                           TextField(
                             decoration: InputDecoration(
+                                contentPadding:
+                                    EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                isDense: true,
                                 labelText: 'Description(optional)',
-                                helperText: 'Must contains only latin characters'),
+                                helperText:
+                                    'Must contains only latin characters'),
                             maxLength: 160,
                           ),
-                          SizedBox(height: 10,),
+                          SizedBox(
+                            height: 10,
+                          ),
                           Row(
                             children: [
                               Text('Shedule'),
                               Spacer(),
-                              Obx(() => CupertinoSwitch(
-                                activeColor: Colors.blueAccent,
-                                value: controller.isSchedule.value,
-                                onChanged: (value) {
-                                  controller.toggleSchedule(value);
-                                },
-                              ),),
+                              Obx(
+                                () => CupertinoSwitch(
+                                  activeColor: Colors.blueAccent,
+                                  value: controller.isSchedule.value,
+                                  onChanged: (value) {
+                                    controller.toggleSchedule(value);
+                                  },
+                                ),
+                              ),
                             ],
                           ),
                           Divider(),
@@ -105,9 +155,10 @@ class ToAccountNumberPage extends GetView<ToAccountNumberController> {
                           CustomButton(
                             text: 'Continue',
                             color: Colors.green,
-                            onPress: () {
-
-                            },
+                            onPress: () {},
+                          ),
+                          SizedBox(
+                            height: 10,
                           )
                         ],
                       ),
@@ -122,10 +173,11 @@ class ToAccountNumberPage extends GetView<ToAccountNumberController> {
     );
   }
 
-  Container _listFromItem() {
+  Container _listFromItem(
+      {String name = 'PIS VND', String number = '0', String value = '0'}) {
     return Container(
       width: 350,
-      margin: EdgeInsets.all(10),
+      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -167,13 +219,13 @@ class ToAccountNumberPage extends GetView<ToAccountNumberController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '240 000 000 đ',
+                '$value đ',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
-                'PID | DSN',
+                '$name | $number',
                 style:
                     TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),
               ),

@@ -8,7 +8,8 @@ final ThemeData appThemeData = ThemeData(
   accentColor: mainColor,
   appBarTheme: AppBarTheme(elevation: 0),
   fontFamily: 'MPLUSRounded1c',
-);
+
+  );
 
 class VdiAppTheme {
   static const Color nearlyWhite = Color(0xFFFAFAFA);
