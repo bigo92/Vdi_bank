@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:line_icons/line_icons.dart';
 import 'package:vdi_bank/modules/home/tab_modules/tab_main/tab_main_controller.dart';
 import 'package:vdi_bank/theme/colors_theme.dart';
 
 class TabMainPage extends StatelessWidget {
   final TabMainController tabMainController = Get.find<TabMainController>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Container(
           child: Column(
@@ -18,47 +21,65 @@ class TabMainPage extends StatelessWidget {
                 color: mainColor,
                 child: Column(
                   children: [
-                    _buildTitleUi(),
+                    _buildTitleUi(
+                      title: 'My templates',
+                    ),
                     Container(
-                      height: 60,
-                      child: ListView.builder(
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          itemCount: 3,
-                          itemBuilder: (context, index) => Container(
-                            margin: EdgeInsets.all(10),
-                            padding: EdgeInsets.symmetric(horizontal: 20),
-                            // height: 50,
-                            // width: 200,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.3),
-                                    spreadRadius: 1,
-                                    blurRadius: 10,
-                                    offset: Offset(0, 3), // changes position of shadow
-                                  ),
-                                ]
-                            ),
-                            child: Row(
-                              mainAxisAlignment:
-                              MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Icon(Icons.medical_services),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Text('My mobile')
-                              ],
-                            ),
-                          )),
+                      height: 70,
+                      child: ListView(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          _listMyTemplateItemUI(
+                              imageAsset: 'assets/images/viettel_logo.png',
+                              title: 'My mobile'),
+                          _listMyTemplateItemUI(
+                              imageAsset: 'assets/images/vietcombank_logo.png',
+                              title: 'Mom'),
+                        ],
+                      ),
                     ),
                   ],
                 ),
               ),
-              _buildTitleUi(),
+              SizedBox(
+                height: 10,
+              ),
+              _buildTitleUi(
+                title: 'Transfers',
+              ),
+              Container(
+                height: 160,
+                child: Center(
+                  child: ListView(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      _buildListItemTransfer(
+                          icon: LineIcons.bank,
+                          text: 'To account number',
+                          onPress: () {
+                            tabMainController.goToAccountNumber();
+                          }),
+                      _buildListItemTransfer(
+                          icon: Icons.credit_card, text: 'To card number'),
+                      _buildListItemTransfer(
+                          icon: Icons.phone_android_rounded,
+                          text: 'By phone number'),
+                      _buildListItemTransfer(
+                          icon: Icons.recent_actors, text: 'Receive number'),
+                      _buildListItemTransfer(
+                          icon: Icons.credit_card, text: 'To card number'),
+                      _buildListItemTransfer(
+                          icon: Icons.phone_android_rounded,
+                          text: 'By phone number'),
+                      _buildListItemTransfer(
+                          icon: Icons.recent_actors, text: 'Receive number'),
+                    ],
+                  ),
+                ),
+              ),
+              _buildTitleUi(title: 'Payments'),
               Container(
                 height: 150,
                 child: ListView(
@@ -66,64 +87,89 @@ class TabMainPage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: [
                     _buildListItemTransfer(
+                        icon: Icons.phone_android_rounded,
+                        text: 'Mobile phone',
+                        type: 1),
+                    _buildListItemTransfer(
+                        icon: LineIcons.lightbulb_o,
+                        text: 'Electricity',
+                        type: 1,
+                        color: Colors.orange),
+                    _buildListItemTransfer(
+                        icon: LineIcons.tint,
+                        text: 'Water',
+                        type: 1,
+                        color: Colors.blueAccent),
+                    _buildListItemTransfer(
                         icon: Icons.food_bank_outlined,
                         text: 'To account number',
-                      onPress: () {
-                          tabMainController.goToAccountNumber();
-                      }
+                        type: 1,
+                        color: Colors.lightBlue),
+                    _buildListItemTransfer(
+                      icon: Icons.food_bank_outlined,
+                      text: 'To account number',
+                      type: 1,
                     ),
                     _buildListItemTransfer(
-                        icon: Icons.food_bank_outlined,
-                        text: 'To account number'),
+                      icon: Icons.food_bank_outlined,
+                      text: 'To account number',
+                      type: 1,
+                    ),
                     _buildListItemTransfer(
-                        icon: Icons.food_bank_outlined,
-                        text: 'To account number'),
-                    _buildListItemTransfer(
-                        icon: Icons.food_bank_outlined,
-                        text: 'To account number'),
-                    _buildListItemTransfer(
-                        icon: Icons.food_bank_outlined,
-                        text: 'To account number'),
-                    _buildListItemTransfer(
-                        icon: Icons.food_bank_outlined,
-                        text: 'To account number'),
-                    _buildListItemTransfer(
-                        icon: Icons.food_bank_outlined,
-                        text: 'To account number'),
+                      icon: Icons.food_bank_outlined,
+                      text: 'To account number',
+                      type: 1,
+                    ),
                   ],
                 ),
               ),
-              _buildTitleUi(),
-              Container(
-                height: 200,
-                child: ListView(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    _buildListItemTransfer(
-                        icon: Icons.food_bank_outlined,
-                        text: 'To account number'),
-                    _buildListItemTransfer(
-                        icon: Icons.food_bank_outlined,
-                        text: 'To account number'),
-                    _buildListItemTransfer(
-                        icon: Icons.food_bank_outlined,
-                        text: 'To account number'),
-                    _buildListItemTransfer(
-                        icon: Icons.food_bank_outlined,
-                        text: 'To account number'),
-                    _buildListItemTransfer(
-                        icon: Icons.food_bank_outlined,
-                        text: 'To account number'),
-                    _buildListItemTransfer(
-                        icon: Icons.food_bank_outlined,
-                        text: 'To account number'),
-                    _buildListItemTransfer(
-                        icon: Icons.food_bank_outlined,
-                        text: 'To account number'),
-                  ],
+              Expanded(
+                child: Container(
+                  color: mainColor,
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  child: Container(
+                    color: Colors.white,
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: Row(
+                      children: [
+                        Text(
+                          'Scheduled \nTransfer & payment',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Spacer(),
+                        Text('View all'),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Container(
+                          width: 25,
+                          height: 25,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Colors.green,
+                          ),
+                          child: Center(
+                            child: Text(
+                              '2',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios_rounded,
+                          color: Colors.green,
+                          size: 15,
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
+              )
             ],
           ),
         ),
@@ -131,33 +177,85 @@ class TabMainPage extends StatelessWidget {
     );
   }
 
-  Widget _buildListItemTransfer({IconData icon, String text, Function onPress}) {
+  Container _listMyTemplateItemUI(
+      {String imageAsset, String title = '', Function onPress}) {
+    return Container(
+      margin: EdgeInsets.all(8),
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      // height: 50,
+      width: 200,
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              spreadRadius: 1,
+              blurRadius: 10,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ]),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Image.asset(
+            imageAsset,
+            width: 40,
+            height: 40,
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          Text(title)
+        ],
+      ),
+    );
+  }
+
+  Widget _buildListItemTransfer(
+      {IconData icon,
+      String text,
+      Function onPress,
+      int type = 0,
+      Color color = Colors.green}) {
+    double radius = 60;
+    double width = 70;
+    double height = 70;
+
+    if (type == 1) {
+      radius = 15;
+      height = 60;
+    }
+
     return GestureDetector(
       onTap: onPress,
       child: Container(
-        margin: EdgeInsets.all(15),
-        width: 70,
+        margin: EdgeInsets.fromLTRB(25, 15, 0, 15),
+        width: width + 20,
         child: Column(
           children: [
             Container(
               child: Icon(
                 icon,
                 color: Colors.white,
+                size: 30,
               ),
               decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(30),
+                  color: color,
+                  borderRadius: BorderRadius.circular(radius),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.green.withOpacity(0.3),
+                      color: color.withOpacity(0.3),
                       spreadRadius: 2,
                       blurRadius: 7,
                       offset: Offset(0, 3), // changes position of shadow
                     ),
-                  ]
-              ),
-              height: 60,
-              width: 60,
+                  ]),
+              height: height,
+              width: width,
+            ),
+            SizedBox(
+              height: 10,
             ),
             Text(
               text,
@@ -169,14 +267,14 @@ class TabMainPage extends StatelessWidget {
     );
   }
 
-  Container _buildTitleUi() {
+  Container _buildTitleUi({@required String title}) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            'My templates',
+            title,
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           Text(

@@ -92,6 +92,8 @@ flutter:
     - assets/images/image_loading.gif
     - assets/images/vpbank_smartotp_icon.png
     - assets/images/icon_bee.png
+    - assets/images/vietcombank_logo.png
+    - assets/images/viettel_logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

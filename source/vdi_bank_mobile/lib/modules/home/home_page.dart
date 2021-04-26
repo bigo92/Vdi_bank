@@ -10,6 +10,7 @@ class HomePage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Obx(()=>Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Container(
           decoration: BoxDecoration(
@@ -46,6 +47,9 @@ class HomePage extends GetView<HomeController> {
         items: controller.listTitleBottom,
         currentIndex: controller.selectedIndex.value,
         selectedItemColor: Colors.amber[800],
+        unselectedItemColor: Colors.black54,
+        type: BottomNavigationBarType.fixed,
+        selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold, color: Colors.black54),
         onTap: controller.onItemTapped,
       ),
     ),);
