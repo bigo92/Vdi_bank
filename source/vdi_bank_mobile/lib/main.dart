@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
       // home: HomePage(),
       home: ExamplePage(),
       getPages: AppPages.pages,
-      // initialRoute: Routes.SPLASH,
-      initialRoute: Routes.HOME,
+      initialRoute: Routes.SPLASH,
+      // initialRoute: Routes.HOME,
 
       theme: appThemeData,
 

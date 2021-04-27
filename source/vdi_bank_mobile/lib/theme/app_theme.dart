@@ -8,8 +8,7 @@ final ThemeData appThemeData = ThemeData(
   accentColor: mainColor,
   appBarTheme: AppBarTheme(elevation: 0),
   fontFamily: 'MPLUSRounded1c',
-
-  );
+);
 
 class VdiAppTheme {
   static const Color nearlyWhite = Color(0xFFFAFAFA);
@@ -28,7 +27,6 @@ class VdiAppTheme {
   static const Color deactivatedText = Color(0xFF767676);
   static const Color dismissibleBackground = Color(0xFF364A54);
   static const Color spacer = Color(0xFFF2F2F2);
-
 
   static const String fontName = 'MPLUSRounded1c';
 
@@ -96,6 +94,32 @@ class VdiAppTheme {
     // fontSize: 15,
     color: Colors.white,
   );
+
+  static const Color buttonTheme_success = Color(0xFF4CAF50);
+  static const Color buttonTheme_danger = Color(0xFFFF9800);
+  static const Color buttonTheme_primary = Color(0xFF448AFF);
+  static const Color buttonTheme_disabled = Color(0xFF9E9E9E);
+
+  static const LinearGradient buttonTheme_successGradient = LinearGradient(
+    colors: [Color(0xFF71b23e), Color(0xFF367b39)],
+  );
+
+  static const LinearGradient buttonTheme_dangerGradient = LinearGradient(
+    colors: [Color(0xffff7b1c), Color(0xffed4427)],
+  );
+
+  static const LinearGradient buttonTheme_primaryGradient = LinearGradient(
+    colors: [Color(0xff2777bc), Color(0xff23599f)],
+  );
+
+  static const LinearGradient buttonTheme_disabledGradient = LinearGradient(
+    colors: [Color(0xffbdbdbd), Color(0xff9E9E9E)],
+  );
+
+  static const LinearGradient buttonTheme_transparentGradient = LinearGradient(
+    colors: [Color(0x00000000),Color(0x00000000)],
+  );
+
 
   static const padding = 10.0;
 }

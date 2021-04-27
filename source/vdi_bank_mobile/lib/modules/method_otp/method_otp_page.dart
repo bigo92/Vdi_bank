@@ -51,7 +51,7 @@ class MethodOtpPage extends GetView<MethodOtpController> {
             ),
             CustomButton(
               text: 'Bỏ qua',
-              color: Colors.transparent,
+              backgroundGradient: VdiAppTheme.buttonTheme_transparentGradient,
               textColor: Colors.black,
               onPress: () {
 
