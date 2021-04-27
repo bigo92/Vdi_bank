@@ -96,6 +96,8 @@ flutter:
     - assets/images/icon_bee.png
     - assets/images/vietcombank_logo.png
     - assets/images/viettel_logo.png
+    - assets/images/banner_suggess.jpg
+    - assets/images/background_app.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

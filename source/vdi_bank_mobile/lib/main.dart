@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       systemNavigationBarIconBrightness: Brightness.dark,
     ));
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       defaultTransition: Transition.fadeIn,
       // home: HomePage(),
       home: ExamplePage(),

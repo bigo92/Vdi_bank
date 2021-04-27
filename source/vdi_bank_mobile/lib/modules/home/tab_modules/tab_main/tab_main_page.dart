@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:vdi_bank/modules/home/tab_modules/tab_main/tab_main_controller.dart';
@@ -10,6 +11,7 @@ class TabMainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Container(
@@ -42,136 +44,219 @@ class TabMainPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 10,
-              ),
-              _buildTitleUi(
-                title: 'Transfers',
-              ),
-              Container(
-                height: 160,
-                child: Center(
-                  child: ListView(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      _buildListItemTransfer(
-                          icon: LineIcons.bank,
-                          text: 'To account number',
-                          onPress: () {
-                            tabMainController.goToAccountNumber();
-                          }),
-                      _buildListItemTransfer(
-                          icon: Icons.credit_card, text: 'To card number'),
-                      _buildListItemTransfer(
-                          icon: Icons.phone_android_rounded,
-                          text: 'By phone number'),
-                      _buildListItemTransfer(
-                          icon: Icons.recent_actors, text: 'Receive number'),
-                      _buildListItemTransfer(
-                          icon: Icons.credit_card, text: 'To card number'),
-                      _buildListItemTransfer(
-                          icon: Icons.phone_android_rounded,
-                          text: 'By phone number'),
-                      _buildListItemTransfer(
-                          icon: Icons.recent_actors, text: 'Receive number'),
-                    ],
-                  ),
-                ),
-              ),
-              _buildTitleUi(title: 'Payments'),
-              Container(
-                height: 150,
-                child: ListView(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
+              Expanded(
+                child: Column(
                   children: [
-                    _buildListItemTransfer(
-                        icon: Icons.phone_android_rounded,
-                        text: 'Mobile phone',
-                        type: 1),
-                    _buildListItemTransfer(
-                        icon: LineIcons.lightbulb_o,
-                        text: 'Electricity',
-                        type: 1,
-                        color: Colors.orange),
-                    _buildListItemTransfer(
-                        icon: LineIcons.tint,
-                        text: 'Water',
-                        type: 1,
-                        color: Colors.blueAccent),
-                    _buildListItemTransfer(
-                        icon: Icons.food_bank_outlined,
-                        text: 'To account number',
-                        type: 1,
-                        color: Colors.lightBlue),
-                    _buildListItemTransfer(
-                      icon: Icons.food_bank_outlined,
-                      text: 'To account number',
-                      type: 1,
+                    SizedBox(
+                      height: 10,
                     ),
-                    _buildListItemTransfer(
-                      icon: Icons.food_bank_outlined,
-                      text: 'To account number',
-                      type: 1,
+                    _buildTitleUi(
+                      title: 'Transfers',
                     ),
-                    _buildListItemTransfer(
-                      icon: Icons.food_bank_outlined,
-                      text: 'To account number',
-                      type: 1,
+                    Expanded(
+                      child: Center(
+                        child: Container(
+                          height: 160,
+                          child: Center(
+                            child: ListView(
+                              shrinkWrap: true,
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                _buildListItemTransfer(
+                                    icon: LineIcons.bank,
+                                    text: 'To account number',
+                                    onPress: () {
+                                      tabMainController.goToAccountNumber();
+                                    }),
+                                _buildListItemTransfer(
+                                    icon: Icons.credit_card,
+                                    text: 'To card number'),
+                                _buildListItemTransfer(
+                                    icon: Icons.phone_android_rounded,
+                                    text: 'By phone number'),
+                                _buildListItemTransfer(
+                                    icon: Icons.recent_actors,
+                                    text: 'Receive number'),
+                                _buildListItemTransfer(
+                                    icon: Icons.credit_card,
+                                    text: 'To card number'),
+                                _buildListItemTransfer(
+                                    icon: Icons.phone_android_rounded,
+                                    text: 'By phone number'),
+                                _buildListItemTransfer(
+                                    icon: Icons.recent_actors,
+                                    text: 'Receive number'),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
               ),
               Expanded(
-                child: Container(
-                  color: mainColor,
-                  padding: EdgeInsets.symmetric(vertical: 10),
-                  child: Container(
-                    color: Colors.white,
-                    padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: Row(
-                      children: [
-                        Text(
-                          'Scheduled \nTransfer & payment',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                child: Column(
+                  children: [
+                    _buildTitleUi(title: 'Payments'),
+                    Expanded(
+                      child: Center(
+                        child: Container(
+                          height: 150,
+                          child: ListView(
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            children: [
+                              _buildListItemTransfer(
+                                  icon: Icons.phone_android_rounded,
+                                  text: 'Mobile phone',
+                                  type: 1),
+                              _buildListItemTransfer(
+                                  icon: LineIcons.lightbulb_o,
+                                  text: 'Electricity',
+                                  type: 1,
+                                  color: Colors.orange),
+                              _buildListItemTransfer(
+                                  icon: LineIcons.tint,
+                                  text: 'Water',
+                                  type: 1,
+                                  color: Colors.blueAccent),
+                              _buildListItemTransfer(
+                                  icon: Icons.food_bank_outlined,
+                                  text: 'To account number',
+                                  type: 1,
+                                  color: Colors.lightBlue),
+                              _buildListItemTransfer(
+                                icon: Icons.food_bank_outlined,
+                                text: 'To account number',
+                                type: 1,
+                              ),
+                              _buildListItemTransfer(
+                                icon: Icons.food_bank_outlined,
+                                text: 'To account number',
+                                type: 1,
+                              ),
+                              _buildListItemTransfer(
+                                icon: Icons.food_bank_outlined,
+                                text: 'To account number',
+                                type: 1,
+                              ),
+                            ],
                           ),
                         ),
-                        Spacer(),
-                        Text('View all'),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          width: 25,
-                          height: 25,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Colors.green,
-                          ),
-                          child: Center(
-                            child: Text(
-                              '2',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Colors.green,
-                          size: 15,
-                        ),
-                      ],
+                      ),
                     ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 100,
+                child: PageView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    _buildSuggessItem(),
+                    _buildSuggessItem(),
+                    _buildSuggessItem(),
+                  ],
+                ),
+              ),
+              Container(
+                color: mainColor,
+                // height: 100,
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: Container(
+                  color: Colors.white,
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  // height: 50,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        'Scheduled \nTransfer & payment',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Spacer(),
+                      Text('View all'),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        width: 25,
+                        height: 25,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.green,
+                        ),
+                        child: Center(
+                          child: Text(
+                            '2',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: Colors.green,
+                        size: 15,
+                      ),
+                    ],
                   ),
                 ),
               )
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Container _buildSuggessItem() {
+    return Container(
+      height: 100,
+      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.black54,
+                blurRadius: 3,
+                spreadRadius: -2,
+                offset: Offset(1, 3))
+          ]),
+      child: Center(
+        child: Row(
+          children: [
+            Container(
+              height: 70,
+              width: 70,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/banner_suggess.jpg'),
+                      fit: BoxFit.cover)),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Miễn phí thường niên, mở thẻ thật tiện'),
+                SizedBox(
+                  height: 10,
+                ),
+                Text('Phí thường niên năm đầu \'0 đồng \''),
+              ],
+            ),
+          ],
         ),
       ),
     );
