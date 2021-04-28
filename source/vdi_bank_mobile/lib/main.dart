@@ -22,22 +22,32 @@ class MyApp extends StatelessWidget {
       systemNavigationBarDividerColor: Colors.grey,
       systemNavigationBarIconBrightness: Brightness.dark,
     ));
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: true,
-      defaultTransition: Transition.fadeIn,
-      // home: HomePage(),
-      home: ExamplePage(),
-      getPages: AppPages.pages,
-      initialRoute: Routes.SPLASH,
-      // initialRoute: Routes.HOME,
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () {
+        FocusScopeNode currentFocus = FocusScope.of(context);
+        if (!currentFocus.hasPrimaryFocus &&
+            currentFocus.focusedChild != null) {
+          FocusManager.instance.primaryFocus.unfocus();
+        }
+      },
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: true,
+        defaultTransition: Transition.fadeIn,
+        // home: HomePage(),
+        home: ExamplePage(),
+        getPages: AppPages.pages,
+        initialRoute: Routes.SPLASH,
+        // initialRoute: Routes.HOME,
 
-      theme: appThemeData,
+        theme: appThemeData,
 
-      locale: LocalizationService.locale,
-      fallbackLocale: LocalizationService.fallbackLocale,
-      translations: LocalizationService(),
+        locale: LocalizationService.locale,
+        fallbackLocale: LocalizationService.fallbackLocale,
+        translations: LocalizationService(),
 
-      // initialBinding: AppBinding(),
+        // initialBinding: AppBinding(),
+      ),
     );
   }
 }
