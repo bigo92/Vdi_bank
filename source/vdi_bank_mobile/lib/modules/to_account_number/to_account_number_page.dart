@@ -219,6 +219,7 @@ class ToAccountNumberPage extends GetView<ToAccountNumberController> {
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 '$value đ',
