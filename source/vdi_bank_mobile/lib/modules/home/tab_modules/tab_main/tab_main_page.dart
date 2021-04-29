@@ -29,6 +29,7 @@ class TabMainPage extends StatelessWidget {
                     Container(
                       height: 70,
                       child: ListView(
+                        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
                         children: [
@@ -59,6 +60,7 @@ class TabMainPage extends StatelessWidget {
                           height: 160,
                           child: Center(
                             child: ListView(
+                              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
                               shrinkWrap: true,
                               scrollDirection: Axis.horizontal,
                               children: [
@@ -101,6 +103,7 @@ class TabMainPage extends StatelessWidget {
                         child: Container(
                           height: 150,
                           child: ListView(
+                            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
                             children: [

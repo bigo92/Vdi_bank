@@ -40,8 +40,14 @@ class HomePage extends GetView<HomeController> {
           ),
         ),
       ),
-      body: Center(
-        child: controller.widgetOptions.elementAt(controller.selectedIndex.value),
+      body: GestureDetector(
+        // behavior: HitTestBehavior.translucent,
+        // onTap: () {
+        //   FocusScope.of(context).requestFocus(new FocusNode());
+        // },
+        child: Center(
+          child: controller.widgetOptions.elementAt(controller.selectedIndex.value),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: controller.listTitleBottom,

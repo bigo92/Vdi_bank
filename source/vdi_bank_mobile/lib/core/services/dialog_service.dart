@@ -170,7 +170,7 @@ class DialogService {
   }
 
   static Future<bool> alert(
-      {String title, String message, String textButton = 'Đóng'}) async {
+      {String title = 'Thông báo', String message, String textButton = 'Đóng'}) async {
     bool close = false;
 
     void onClose() {
@@ -227,7 +227,8 @@ class DialogService {
                             color: Colors.white,
                             border: Border(
                               bottom: BorderSide(
-                                width: 0.5,
+                                width: 0.2,
+                                color: Colors.grey
                               ),
                             ),
                           ),

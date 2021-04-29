@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.vdi_bank">
-   <application
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+
+    <application
         android:label="vdi_bank"
         android:icon="@mipmap/ic_launcher">
         <activity
