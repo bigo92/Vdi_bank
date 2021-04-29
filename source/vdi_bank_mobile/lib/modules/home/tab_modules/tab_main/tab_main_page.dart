@@ -64,10 +64,7 @@ class TabMainPage extends StatelessWidget {
                               children: [
                                 _buildListItemTransfer(
                                     icon: LineIcons.bank,
-                                    text: 'To account number',
-                                    onPress: () {
-                                      tabMainController.goToAccountNumber();
-                                    }),
+                                    text: 'To account number'),
                                 _buildListItemTransfer(
                                     icon: Icons.credit_card,
                                     text: 'To card number'),

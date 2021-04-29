@@ -155,10 +155,12 @@ class ToAccountNumberPage extends GetView<ToAccountNumberController> {
                           CustomButton(
                             text: 'Continue',
                             color: Colors.green,
-                            onPress: () {},
+                            onPress: () {
+                              controller.close();
+                            },
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 15,
                           )
                         ],
                       ),
