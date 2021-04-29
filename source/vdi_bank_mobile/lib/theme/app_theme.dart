@@ -7,7 +7,7 @@ final ThemeData appThemeData = ThemeData(
   visualDensity: VisualDensity.adaptivePlatformDensity,
   accentColor: mainColor,
   appBarTheme: AppBarTheme(elevation: 0),
-  fontFamily: 'MPLUSRounded1c',
+  fontFamily: 'Roboto',
 );
 
 class VdiAppTheme {

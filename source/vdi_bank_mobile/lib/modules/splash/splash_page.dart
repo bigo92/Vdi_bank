@@ -17,8 +17,8 @@ class SplashPage extends GetView<SplashController> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                UtilColor.getColorFromHex('#5581F1'),
-                UtilColor.getColorFromHex('#1153FC'),
+                Colors.white,
+                Colors.white,
               ],
             )),
         child: Column(
@@ -29,7 +29,7 @@ class SplashPage extends GetView<SplashController> {
               width: 250,
               height: 250,
             ),
-            SpinKitFadingCircle(color: Colors.white, size: 40,)
+            SpinKitFadingCircle(color: Colors.grey, size: 30,)
           ],
         ),
       ),

@@ -115,6 +115,11 @@ flutter:
     - family: MPLUSRounded1c
       fonts:
         - asset: assets/fonts/MPLUSRounded1c-Light.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Light.ttf
+#        - asset: assets/fonts/Roboto-Bold.ttf
+        - asset: assets/fonts/Roboto-Italic.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:
