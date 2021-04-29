@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
