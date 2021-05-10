@@ -14,13 +14,13 @@ class HomePage extends GetView<HomeController> {
       appBar: AppBar(
         title: Container(
           decoration: BoxDecoration(
-            color: Colors.white.withAlpha(400),
-            borderRadius: BorderRadius.circular(15),
+            color: Colors.white.withAlpha(500),
+            borderRadius: BorderRadius.circular(10),
           ),
           child: Row(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 5),
+                padding: const EdgeInsets.symmetric(horizontal: 7),
                 child: Icon(
                   Icons.search,
                   color: mainColor,

@@ -16,7 +16,7 @@ class TabMainPage extends StatelessWidget {
       body: SafeArea(
         child: Container(
           child: Column(
-            mainAxisSize: MainAxisSize.min,
+            // mainAxisSize: MainAxisSize.min,
             children: [
               Container(
                 padding: EdgeInsets.only(bottom: 10),
@@ -28,6 +28,7 @@ class TabMainPage extends StatelessWidget {
                     ),
                     Container(
                       height: 70,
+                      padding: EdgeInsets.symmetric(horizontal: 7),
                       child: ListView(
                         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
                         shrinkWrap: true,
@@ -45,7 +46,7 @@ class TabMainPage extends StatelessWidget {
                   ],
                 ),
               ),
-              Expanded(
+              Container(
                 child: Column(
                   children: [
                     SizedBox(
@@ -54,8 +55,7 @@ class TabMainPage extends StatelessWidget {
                     _buildTitleUi(
                       title: 'Transfers',
                     ),
-                    Expanded(
-                      child: Center(
+                    Center(
                         child: Container(
                           height: 160,
                           child: Center(
@@ -90,7 +90,6 @@ class TabMainPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                    ),
                   ],
                 ),
               ),
@@ -98,10 +97,9 @@ class TabMainPage extends StatelessWidget {
                 child: Column(
                   children: [
                     _buildTitleUi(title: 'Payments'),
-                    Expanded(
-                      child: Center(
+                    Center(
                         child: Container(
-                          height: 150,
+                          height: 160,
                           child: ListView(
                             keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
                             shrinkWrap: true,
@@ -145,7 +143,6 @@ class TabMainPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                    ),
                   ],
                 ),
               ),
@@ -308,8 +305,8 @@ class TabMainPage extends StatelessWidget {
     double height = 70;
 
     if (type == 1) {
-      radius = 15;
-      height = 60;
+      radius = 20;
+      height = 70;
     }
 
     return GestureDetector(
@@ -354,7 +351,7 @@ class TabMainPage extends StatelessWidget {
 
   Container _buildTitleUi({@required String title}) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10),
+      padding: EdgeInsets.symmetric(horizontal: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

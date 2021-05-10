@@ -8,9 +8,15 @@ import 'package:vdi_bank/modules/home/tab_modules/tab_transfer/tab_transfer_page
 
 class HomeController extends GetxController {
   final selectedIndex = 0.obs;
+  final selectedTitle = "VDIBank".obs;
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-
+  List<String> listTitle = <String>[
+    "VDIBank",
+    "Transfer",
+    "History",
+    "Setting"
+  ];
   List<Widget> widgetOptions = <Widget>[
     TabMainPage(),
     TabTransferPage(),
@@ -39,6 +45,7 @@ class HomeController extends GetxController {
 
   onItemTapped(int index) {
     selectedIndex.value = index;
+    selectedTitle.value = listTitle[index];
   }
 
   @override
