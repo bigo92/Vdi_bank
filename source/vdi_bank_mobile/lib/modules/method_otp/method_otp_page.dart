@@ -92,6 +92,7 @@ class MethodOtpPage extends GetView<MethodOtpController> {
               child: Radio<MethodReceiveOtp>(
                 groupValue: controller.methodReceiveOtp.value,
                 value: value,
+                activeColor: Colors.green,
                 onChanged: (value) {
                   controller.onChangeMethodReceiveOtp(value);
                 },

@@ -226,7 +226,7 @@ class LoginPage extends GetView<LoginController> {
               width: 70,
               height: 70,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
+                  borderRadius: BorderRadius.circular(20),
                   image: backgroundImage != null
                       ? DecorationImage(
                           image: AssetImage(backgroundImage), fit: BoxFit.cover)
@@ -235,11 +235,14 @@ class LoginPage extends GetView<LoginController> {
               child: icon,
             ),
             //assets/images/vpbank_smartotp_icon.png
+            SizedBox(
+              height: 4,
+            ),
             Text(
               text,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
+              // style: TextStyle(
+              //   fontWeight: FontWeight.w500,
+              // ),
               textAlign: TextAlign.center,
             )
           ],

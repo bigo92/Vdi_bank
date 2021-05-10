@@ -1,5 +1,6 @@
 import 'package:vdi_bank/modules/home/home_controller.dart';
 import 'package:get/get.dart';
+import 'package:vdi_bank/modules/home/tab_modules/tab_history/tab_history_controller.dart';
 import 'package:vdi_bank/modules/home/tab_modules/tab_main/tab_main_controller.dart';
 import 'package:vdi_bank/modules/home/tab_modules/tab_setting/tab_setting_controller.dart';
 import 'package:vdi_bank/modules/home/tab_modules/tab_transfer/tab_transfer_controller.dart';
@@ -10,6 +11,7 @@ class HomeBinding implements Bindings {
     Get.lazyPut<HomeController>(() => HomeController());
     Get.lazyPut<TabMainController>(() => TabMainController());
     Get.lazyPut<TabSettingController>(() => TabSettingController());
+    Get.lazyPut<TabHistoryController>(() => TabHistoryController());
     Get.lazyPut<TabTransferController>(() => TabTransferController());
   }
 }

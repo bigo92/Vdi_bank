@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:vdi_bank/modules/home/tab_modules/tab_history/tab_history_page.dart';
 import 'package:vdi_bank/modules/home/tab_modules/tab_main/tab_main_page.dart';
 import 'package:vdi_bank/modules/home/tab_modules/tab_setting/tab_setting_page.dart';
 import 'package:vdi_bank/modules/home/tab_modules/tab_transfer/tab_transfer_page.dart';
@@ -13,7 +14,7 @@ class HomeController extends GetxController {
   List<Widget> widgetOptions = <Widget>[
     TabMainPage(),
     TabTransferPage(),
-    Container(),
+    TabHistoryPage(),
     TabSettingPage(),
   ];
 

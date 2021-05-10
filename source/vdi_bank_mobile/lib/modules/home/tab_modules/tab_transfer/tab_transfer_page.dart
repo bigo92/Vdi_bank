@@ -20,7 +20,7 @@ class TabTransferPage extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                height: 230,
+                height: 210,
                 padding: EdgeInsets.symmetric(vertical: 10),
                 color: Color.fromRGBO(246, 246, 246, 1),
                 child: Column(
@@ -99,49 +99,50 @@ class TabTransferPage extends StatelessWidget {
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             color: Colors.grey,
-                                            fontSize: 18)),
+                                            fontSize: 16)),
                                     Spacer(),
                                     Text('25/05/2018 15:04',
                                         style: TextStyle(
-                                            fontWeight: FontWeight.bold,
+                                            // fontWeight: FontWeight.bold,
                                             color: Colors.grey,
                                             fontSize: 13)),
                                   ],
                                 ),
+                                SizedBox(height: 2,),
                                 Row(
                                   children: [
                                     Text('FT17179940207403',
                                         style: TextStyle(
-                                            fontWeight: FontWeight.bold,
+                                            // fontWeight: FontWeight.bold,
                                             color: Colors.grey,
                                             fontSize: 13)),
                                     Spacer(),
                                     Text('VPB1804110004503811',
                                         style: TextStyle(
-                                            fontWeight: FontWeight.bold,
+                                            // fontWeight: FontWeight.bold,
                                             color: Colors.grey,
                                             fontSize: 13))
                                   ],
                                 ),
                                 SizedBox(
-                                  height: 10,
+                                  height: 5,
                                 ),
                                 Text('From account',
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black,
-                                        fontSize: 18)),
+                                        fontSize: 16)),
                                 SizedBox(
-                                  height: 10,
+                                  height: 5,
                                 ),
                                 Text('Normal VND',
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold,
+                                        // fontWeight: FontWeight.bold,
                                         color: Colors.grey,
                                         fontSize: 13)),
                                 Text('130012345',
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold,
+                                        // fontWeight: FontWeight.bold,
                                         color: Colors.black,
                                         fontSize: 13)),
                               ],
@@ -162,18 +163,18 @@ class TabTransferPage extends StatelessWidget {
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black,
-                                        fontSize: 18)),
+                                        fontSize: 16)),
                                 SizedBox(
-                                  height: 10,
+                                  height: 5,
                                 ),
                                 Text('VPBank',
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold,
+                                        // fontWeight: FontWeight.bold,
                                         color: Colors.grey,
                                         fontSize: 13)),
                                 Text('1234 **** **** 5678',
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold,
+                                        // fontWeight: FontWeight.bold,
                                         color: Colors.black,
                                         fontSize: 13)),
                               ],
@@ -194,19 +195,19 @@ class TabTransferPage extends StatelessWidget {
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         color: Colors.grey,
-                                        fontSize: 18)),
+                                        fontSize: 16)),
                                 SizedBox(
                                   height: 5,
                                 ),
                                 Text('165 000 đ',
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold,
+                                        // fontWeight: FontWeight.bold,
                                         color: Colors.black,
                                         fontSize: 26)),
                                 Text(
                                     'One hundred sixty five thousand Vietnamese Dongs',
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold,
+                                        // fontWeight: FontWeight.bold,
                                         color: Colors.grey,
                                         fontSize: 13)),
                               ],
@@ -225,7 +226,7 @@ class TabTransferPage extends StatelessWidget {
                               children: [
                                 Text('Free (not include VAT)',
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold,
+                                        // fontWeight: FontWeight.bold,
                                         color: Colors.grey,
                                         fontSize: 18)),
                                 SizedBox(
@@ -233,7 +234,7 @@ class TabTransferPage extends StatelessWidget {
                                 ),
                                 Text('0 đ',
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold,
+                                        // fontWeight: FontWeight.bold,
                                         color: Colors.black,
                                         fontSize: 13)),
                               ],
@@ -250,17 +251,18 @@ class TabTransferPage extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('Description)',
+                                Text('Description',
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold,
+                                        // fontWeight: FontWeight.bold,
                                         color: Colors.grey,
-                                        fontSize: 18)),
+                                        fontSize: 16),
+                                ),
                                 SizedBox(
                                   height: 5,
                                 ),
-                                Text('Payment for month)',
+                                Text('Payment for month',
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold,
+                                        // fontWeight: FontWeight.bold,
                                         color: Colors.black,
                                         fontSize: 20)),
                               ],
@@ -314,7 +316,11 @@ class TabTransferPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('From account'),
+          Text('From account',
+            style: TextStyle(
+              fontWeight: FontWeight.bold
+            ),
+          ),
           SizedBox(
             height: 5,
           ),
@@ -352,13 +358,15 @@ class TabTransferPage extends StatelessWidget {
                         Text(
                           '$name',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.grey),
+                              // fontWeight: FontWeight.bold,
+                              color: Colors.grey
+                          ),
                         ),
                         Spacer(),
                         Text(
                           '$value đ',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                              // fontWeight: FontWeight.bold,
                               color: Colors.grey,
                               fontSize: 18),
                         ),
@@ -379,7 +387,11 @@ class TabTransferPage extends StatelessWidget {
             height: 5,
           ),
           //--------------------
-          Text('To account'),
+          Text('To account',
+            style: TextStyle(
+                fontWeight: FontWeight.bold
+            ),
+          ),
           SizedBox(
             height: 5,
           ),
@@ -417,13 +429,15 @@ class TabTransferPage extends StatelessWidget {
                         Text(
                           'VNLady Credit',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.grey),
+                              // fontWeight: FontWeight.bold,
+                              color: Colors.grey
+                          ),
                         ),
                         Spacer(),
                         Text(
                           '+300 000 đ',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                              // fontWeight: FontWeight.bold,
                               color: Colors.green,
                               fontSize: 18),
                         ),
@@ -490,10 +504,11 @@ class TabTransferPage extends StatelessWidget {
               child: icon,
             ),
             //assets/images/vpbank_smartotp_icon.png
+            SizedBox(height: 4,),
             Text(
               text,
               style: TextStyle(
-                fontWeight: FontWeight.bold,
+                // fontWeight: FontWeight.bold,
               ),
               textAlign: TextAlign.center,
             )
